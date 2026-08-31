@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { EventRecord } from "@/lib/types";
@@ -16,15 +17,16 @@ export default async function Home() {
 
   return (
     <div>
-      <section
-        className="overflow-hidden bg-saffron-soft bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/temple-bg-removebg-preview.png')",
-          backgroundPosition: "left top",
-          backgroundSize: "auto 100%",
-        }}
-      >
-        <div className="mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
+      <section className="relative overflow-hidden bg-saffron-soft">
+        <Image
+          src="/assets/temple-bg-removebg-preview.png"
+          alt=""
+          width={1152}
+          height={2048}
+          aria-hidden="true"
+          className="pointer-events-none absolute left-0 top-0 h-full w-24 select-none object-cover object-top-left sm:w-32 md:w-40 lg:w-48"
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
           <HeroCarousel />
         </div>
       </section>
