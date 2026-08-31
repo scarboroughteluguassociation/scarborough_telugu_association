@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --paper: #f6f1e7;
+  --paper-raised: #fdfbf6;
+  --ink: #2b241c;
+  --ink-soft: #5b5044;
+  --line: #e1d6c2;
+  --maroon: #8c3a2e;
+  --maroon-soft: #f0e0da;
+  --gold: #b9832a;
+  --gold-soft: #f3e6c9;
+  --teal: #2f5c56;
+  --teal-soft: #dde9e5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #1c1712;
+    --paper-raised: #241e17;
+    --ink: #efe7d8;
+    --ink-soft: #bfb3a0;
+    --line: #3a3226;
+    --maroon: #e08f7c;
+    --maroon-soft: #3a2420;
+    --gold: #e0b45c;
+    --gold-soft: #3a2e17;
+    --teal: #7fb3a8;
+    --teal-soft: #1c2f2a;
   }
 }
 
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-maroon: var(--maroon);
+  --color-maroon-soft: var(--maroon-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-source-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
 }
