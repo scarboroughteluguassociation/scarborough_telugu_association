@@ -26,7 +26,7 @@ export function EventCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-line bg-paper-raised shadow-sm">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-line bg-paper-raised shadow-sm transition-shadow duration-200 hover:shadow-lg hover:border-[#610917]/40">
       <div className="relative aspect-video w-full shrink-0">
         {imageUrl ? (
           <Image src={imageUrl} alt={title} fill className="object-cover" />
@@ -37,7 +37,7 @@ export function EventCard({
       <div className="flex flex-1 flex-col p-5">
         <h2 className="font-display text-lg font-semibold">{title}</h2>
 
-        <div className="mt-3 flex items-start gap-2 text-sm font-semibold text-saffron">
+        <div className="mt-3 flex items-start gap-2 text-sm font-semibold text-[#610917]">
           <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2">
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M3 10h18M8 3v4M16 3v4" strokeLinecap="round" />
@@ -59,7 +59,7 @@ export function EventCard({
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="rounded-full bg-saffron px-4 py-2 text-xs font-semibold uppercase tracking-wide text-paper-raised hover:opacity-90"
+            className="rounded-full bg-[#610917] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-paper-raised hover:opacity-90"
           >
             {open ? "Less info" : "More info"}
           </button>

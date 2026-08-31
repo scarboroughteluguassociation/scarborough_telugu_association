@@ -35,9 +35,9 @@ export function Nav() {
               <Image
                 src="/logo.jpg"
                 alt="Scarborough Telugu Association logo"
-                width={64}
-                height={64}
-                className="h-9 w-9 shrink-0 rounded-full object-cover"
+                width={150}
+                height={150}
+                className="h-14 w-14 shrink-0 rounded-full object-cover"
               />
             </div>
           </div>
@@ -45,12 +45,12 @@ export function Nav() {
             Scarborough Telugu Association
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium sm:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-paper-raised/85 hover:text-paper-raised"
+              className="rounded-md px-2 py-1 text-paper-raised transition-colors hover:bg-paper-raised hover:text-[#610917]"
             >
               {link.label}
             </Link>
@@ -68,7 +68,7 @@ export function Nav() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-paper-raised sm:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-paper-raised lg:hidden"
           >
             {menuOpen ? (
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2">
@@ -92,13 +92,13 @@ export function Nav() {
       </div>
 
       {menuOpen && (
-        <nav className="flex flex-col gap-1 border-t border-paper-raised/20 px-6 py-3 text-sm font-medium sm:hidden">
+        <nav className="flex flex-col gap-1 border-t border-paper-raised/20 px-6 py-3 text-sm font-medium lg:hidden">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-md px-2 py-2 text-paper-raised/85 hover:text-paper-raised"
+              className="rounded-md px-2 py-2 text-paper-raised transition-colors hover:bg-paper-raised hover:text-[#610917]"
             >
               {link.label}
             </Link>

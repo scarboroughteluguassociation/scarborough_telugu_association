@@ -26,6 +26,14 @@ export default async function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute bottom-0 left-0 h-auto w-16 select-none sm:w-20 md:w-24 lg:w-28"
         />
+        <Image
+          src="/assets/lotus1-cutout.png"
+          alt=""
+          width={467}
+          height={1915}
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 right-0 h-auto w-16 select-none sm:w-20 md:w-24 lg:w-28"
+        />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
           <HeroCarousel />
         </div>
@@ -34,11 +42,11 @@ export default async function Home() {
       {!!events?.length && (
         <section className="bg-paper-raised">
           <div className="mx-auto max-w-5xl px-6 py-16">
-            <div className="flex items-center justify-between">
+            <div className="relative text-center">
               <h2 className="font-display text-3xl font-semibold">Events</h2>
               <Link
                 href="/events"
-                className="text-sm font-semibold text-blue hover:underline"
+                className="text-sm font-semibold text-blue hover:underline sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2"
               >
                 See all &rarr;
               </Link>
