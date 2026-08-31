@@ -21,10 +21,10 @@ export default async function Home() {
         <Image
           src="/assets/temple-bg-removebg-preview.png"
           alt=""
-          width={1152}
-          height={2048}
+          width={241}
+          height={1033}
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 h-full w-24 select-none object-cover object-top-left sm:w-32 md:w-40 lg:w-48"
+          className="pointer-events-none absolute bottom-0 left-0 h-auto w-16 select-none sm:w-20 md:w-24 lg:w-28"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
           <HeroCarousel />
