@@ -9,7 +9,12 @@ export default function ContactPage() {
       <div className="mt-8 space-y-1 text-sm">
         <p>
           <span className="text-ink-soft">Email:</span>{" "}
-          info@scarboroughtelugu.org
+          <a
+            href="mailto:scarboroughteluguassociation@gmail.com"
+            className="text-blue hover:underline"
+          >
+            scarboroughteluguassociation@gmail.com
+          </a>
         </p>
         <p>
           <span className="text-ink-soft">Instagram:</span>{" "}
