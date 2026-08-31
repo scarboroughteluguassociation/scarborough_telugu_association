@@ -1,33 +1,69 @@
 import Link from "next/link";
+import { createClient } from "@/lib/supabase/server";
+import type { EventRecord } from "@/lib/types";
+import { HeroCarousel } from "@/components/hero-carousel";
+import { EventCard } from "@/components/event-card";
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient();
+  const { data: events } = await supabase
+    .from("events")
+    .select("*")
+    .eq("is_published", true)
+    .order("starts_at", { ascending: true })
+    .limit(3)
+    .returns<EventRecord[]>();
+
   return (
-    <div className="mx-auto max-w-5xl px-6 py-16">
-      <p className="mb-3 font-mono text-xs tracking-wide text-teal uppercase">
-        Serving the Telugu community in Scarborough
-      </p>
-      <h1 className="max-w-2xl font-display text-4xl font-semibold sm:text-5xl">
-        Scarborough Telugu Association
-      </h1>
-      <p className="mt-5 max-w-xl text-lg text-ink-soft">
-        Bringing our community together through culture, festivals and events —
-        find out what&apos;s happening next, browse memories from past
-        gatherings, and support our work.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link
-          href="/events"
-          className="rounded-full bg-maroon px-5 py-2.5 text-sm font-semibold text-paper-raised hover:opacity-90"
-        >
-          Upcoming Events
-        </Link>
-        <Link
-          href="/donate"
-          className="rounded-full border border-line px-5 py-2.5 text-sm font-semibold hover:bg-paper-raised"
-        >
-          Donate
-        </Link>
-      </div>
+    <div>
+      <section
+        className="overflow-hidden bg-saffron-soft bg-no-repeat"
+        style={{
+          backgroundImage: "url('/assets/temple-bg-removebg-preview.png')",
+          backgroundPosition: "left top",
+          backgroundSize: "auto 100%",
+        }}
+      >
+        <div className="mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
+          <HeroCarousel />
+        </div>
+      </section>
+
+      {!!events?.length && (
+        <section className="bg-paper-raised">
+          <div className="mx-auto max-w-5xl px-6 py-16">
+            <div className="flex items-center justify-between">
+              <h2 className="font-display text-3xl font-semibold">Events</h2>
+              <Link
+                href="/events"
+                className="text-sm font-semibold text-blue hover:underline"
+              >
+                See all &rarr;
+              </Link>
+            </div>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {events.map((event) => {
+                const imageUrl = event.image_path
+                  ? supabase.storage.from("event-images").getPublicUrl(event.image_path)
+                      .data.publicUrl
+                  : null;
+
+                return (
+                  <EventCard
+                    key={event.id}
+                    title={event.title}
+                    description={event.description}
+                    startsAt={event.starts_at}
+                    venue={event.venue}
+                    imageUrl={imageUrl}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }

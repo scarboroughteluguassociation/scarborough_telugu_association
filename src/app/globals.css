@@ -1,32 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f6f1e7;
-  --paper-raised: #fdfbf6;
-  --ink: #2b241c;
-  --ink-soft: #5b5044;
-  --line: #e1d6c2;
-  --maroon: #8c3a2e;
-  --maroon-soft: #f0e0da;
-  --gold: #b9832a;
-  --gold-soft: #f3e6c9;
-  --teal: #2f5c56;
-  --teal-soft: #dde9e5;
+  --paper: #fbf7ed;
+  --paper-raised: #ffffff;
+  --ink: #202a3c;
+  --ink-soft: #5b6472;
+  --line: #e7dfcf;
+  --saffron: #e07a1f;
+  --saffron-soft: #fbe7cf;
+  --gold: #c79a2b;
+  --gold-soft: #f5eac7;
+  --blue: #1f4e8c;
+  --blue-soft: #dee7f3;
+  --green: #1e7a4c;
+  --green-soft: #dceee1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #1c1712;
-    --paper-raised: #241e17;
-    --ink: #efe7d8;
-    --ink-soft: #bfb3a0;
-    --line: #3a3226;
-    --maroon: #e08f7c;
-    --maroon-soft: #3a2420;
-    --gold: #e0b45c;
-    --gold-soft: #3a2e17;
-    --teal: #7fb3a8;
-    --teal-soft: #1c2f2a;
+    --paper: #191d26;
+    --paper-raised: #21252f;
+    --ink: #ece7da;
+    --ink-soft: #a9afbc;
+    --line: #333a48;
+    --saffron: #f0975a;
+    --saffron-soft: #3d2c1c;
+    --gold: #e0bd66;
+    --gold-soft: #392f18;
+    --blue: #7fa4e0;
+    --blue-soft: #202c42;
+    --green: #6fbf94;
+    --green-soft: #1c2f26;
   }
 }
 
@@ -36,12 +40,14 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-line: var(--line);
-  --color-maroon: var(--maroon);
-  --color-maroon-soft: var(--maroon-soft);
+  --color-saffron: var(--saffron);
+  --color-saffron-soft: var(--saffron-soft);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
-  --color-teal: var(--teal);
-  --color-teal-soft: var(--teal-soft);
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-source-sans);
   --font-mono: var(--font-plex-mono);

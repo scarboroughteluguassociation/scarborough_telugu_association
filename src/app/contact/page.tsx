@@ -17,7 +17,7 @@ export default function ContactPage() {
             href="https://www.instagram.com/scarborough_telugu_association/"
             target="_blank"
             rel="noreferrer"
-            className="text-teal hover:underline"
+            className="text-blue hover:underline"
           >
             @scarborough_telugu_association
           </a>

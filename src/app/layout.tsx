@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Scarborough Telugu Association",
   description:
     "Community events, gallery and news from the Scarborough Telugu Association, serving the Telugu community in Scarborough, Canada.",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

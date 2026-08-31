@@ -1,42 +1,45 @@
+import fs from "fs";
+import path from "path";
 import Image from "next/image";
 
 const ETRANSFER_EMAIL = process.env.NEXT_PUBLIC_ETRANSFER_EMAIL;
 const DONATION_LINK = process.env.NEXT_PUBLIC_DONATION_LINK;
 
 export default function DonatePage() {
+  // Drop the association's Interac QR (e.g. from their bank's "Business
+  // Request Money" feature) at public/donate-qr.png and this section
+  // appears automatically — no code change needed.
+  const hasQr = fs.existsSync(path.join(process.cwd(), "public", "donate-qr.png"));
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
       <h1 className="font-display text-3xl font-semibold">Support Our Community</h1>
       <p className="mx-auto mt-4 max-w-lg text-ink-soft">
         Your donation helps us host festivals, cultural programs and
-        community events throughout the year. Send an Interac e-Transfer —
-        scan the code below, or send directly to the email shown.
+        community events throughout the year. Send an Interac e-Transfer
+        {hasQr ? " — scan the code below, or send directly to the email shown." : " to the email below."}
       </p>
 
-      <div className="mx-auto mt-10 w-fit rounded-xl border border-line bg-paper-raised p-8">
-        {/*
-          Replace /donate-qr.png with a QR code that encodes the e-Transfer
-          email below (many banks generate one from "Request money", or use
-          any QR generator). Swap this whole block for a Stripe Payment Link
-          QR later if the association moves to a paid gateway.
-        */}
-        <Image
-          src="/donate-qr.png"
-          alt="Scan to send an Interac e-Transfer"
-          width={220}
-          height={220}
-          className="mx-auto"
-        />
-        <p className="mt-3 font-mono text-xs text-ink-soft">
-          Scan with your banking app
-        </p>
-      </div>
+      {hasQr && (
+        <div className="mx-auto mt-10 w-fit rounded-xl border border-line bg-paper-raised p-8">
+          <Image
+            src="/donate-qr.png"
+            alt="Scan to send an Interac e-Transfer"
+            width={220}
+            height={220}
+            className="mx-auto"
+          />
+          <p className="mt-3 font-mono text-xs text-ink-soft">
+            Scan with your banking app
+          </p>
+        </div>
+      )}
 
       <div className="mt-8">
         {ETRANSFER_EMAIL ? (
           <p className="text-sm">
             Or send an e-Transfer directly to{" "}
-            <span className="font-semibold text-maroon">{ETRANSFER_EMAIL}</span>
+            <span className="font-semibold text-saffron">{ETRANSFER_EMAIL}</span>
           </p>
         ) : (
           <p className="text-sm text-gold">
@@ -52,7 +55,7 @@ export default function DonatePage() {
             href={DONATION_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-block rounded-full bg-maroon px-6 py-3 text-sm font-semibold text-paper-raised hover:opacity-90"
+            className="inline-block rounded-full bg-saffron px-6 py-3 text-sm font-semibold text-paper-raised hover:opacity-90"
           >
             Donate by Card
           </a>

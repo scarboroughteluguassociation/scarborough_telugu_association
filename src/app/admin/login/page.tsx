@@ -15,7 +15,7 @@ export default async function LoginPage({
       </p>
 
       {error && (
-        <p className="mt-4 rounded-md bg-maroon-soft px-3 py-2 text-sm text-maroon">
+        <p className="mt-4 rounded-md bg-saffron-soft px-3 py-2 text-sm text-saffron">
           {error}
         </p>
       )}
@@ -27,7 +27,7 @@ export default async function LoginPage({
             type="email"
             name="email"
             required
-            className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-teal"
+            className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
         <label className="text-sm font-medium">
@@ -36,12 +36,12 @@ export default async function LoginPage({
             type="password"
             name="password"
             required
-            className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-teal"
+            className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
         <button
           type="submit"
-          className="mt-2 rounded-full bg-maroon px-4 py-2 text-sm font-semibold text-paper-raised hover:opacity-90"
+          className="mt-2 rounded-full bg-saffron px-4 py-2 text-sm font-semibold text-paper-raised hover:opacity-90"
         >
           Sign In
         </button>

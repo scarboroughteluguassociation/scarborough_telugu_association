@@ -18,7 +18,7 @@ export default async function AdminDashboard() {
         <h1 className="font-display text-2xl font-semibold">Events</h1>
         <Link
           href="/admin/events/new"
-          className="rounded-full bg-maroon px-4 py-2 text-sm font-semibold text-paper-raised hover:opacity-90"
+          className="rounded-full bg-saffron px-4 py-2 text-sm font-semibold text-paper-raised hover:opacity-90"
         >
           + New event
         </Link>
@@ -45,7 +45,7 @@ export default async function AdminDashboard() {
                     <p className="text-xs text-ink-soft">
                       {new Date(event.starts_at).toLocaleString("en-CA")} ·{" "}
                       {event.is_published ? (
-                        <span className="text-teal">Published</span>
+                        <span className="text-green">Published</span>
                       ) : (
                         <span className="text-gold">Draft</span>
                       )}
@@ -53,11 +53,11 @@ export default async function AdminDashboard() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
-                  <Link href={`/admin/events/${event.id}/edit`} className="text-teal hover:underline">
+                  <Link href={`/admin/events/${event.id}/edit`} className="text-blue hover:underline">
                     Edit
                   </Link>
                   <form action={deleteEvent.bind(null, event.id)}>
-                    <button type="submit" className="text-maroon hover:underline">
+                    <button type="submit" className="text-saffron hover:underline">
                       Delete
                     </button>
                   </form>
