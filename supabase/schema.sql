@@ -38,3 +38,26 @@ create policy "Authenticated users manage event images"
   on storage.objects for all
   using (bucket_id = 'event-images' and auth.role() = 'authenticated')
   with check (bucket_id = 'event-images' and auth.role() = 'authenticated');
+
+create table if not exists members (
+  id uuid primary key default gen_random_uuid(),
+  full_name text not null,
+  email text not null,
+  phone text,
+  message text,
+  created_at timestamptz not null default now()
+);
+
+alter table members enable row level security;
+
+-- Anyone can submit the public "join as a member" form.
+create policy "Public can submit membership requests"
+  on members for insert
+  with check (true);
+
+-- Signed-in admins can view and manage submissions. Member details are
+-- not publicly readable.
+create policy "Authenticated users manage members"
+  on members for all
+  using (auth.role() = 'authenticated')
+  with check (auth.role() = 'authenticated');

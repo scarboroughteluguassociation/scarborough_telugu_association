@@ -7,11 +7,14 @@ type Slide = {
   src?: string;
   alt: string;
   label?: string;
+  bg?: string;
 };
 
 const slides: Slide[] = [
-  { label: "Image 1", alt: "" },
-  { label: "Image 2", alt: "" },
+  { src: "/assets/car4.jpg", alt: "" },
+  { src: "/assets/car4.jpg", alt: "" },
+  { src: "/assets/car4.jpg", alt: "" },
+  { src: "/assets/car4.jpg", alt: "" },
 ];
 
 const GOLD = "#c9a227";
@@ -34,7 +37,7 @@ export function HeroCarousel() {
           <div className="relative aspect-3/1 overflow-hidden bg-paper-raised">
             {slides.map((slide, i) => (
               <div
-                key={slide.label ?? slide.src}
+                key={i}
                 className={
                   "absolute inset-0 transition-opacity duration-700 " +
                   (i === index ? "opacity-100" : "opacity-0")
@@ -43,7 +46,12 @@ export function HeroCarousel() {
                 {slide.src ? (
                   <Image src={slide.src} alt={slide.alt} fill className="object-cover" />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-paper text-2xl font-display font-semibold text-ink-soft">
+                  <div
+                    className={
+                      "flex h-full w-full items-center justify-center text-2xl font-display font-semibold text-ink-soft " +
+                      (slide.bg ?? "bg-paper")
+                    }
+                  >
                     {slide.label}
                   </div>
                 )}
@@ -56,7 +64,7 @@ export function HeroCarousel() {
         <div className="mt-3 flex justify-center gap-1.5">
           {slides.map((slide, i) => (
             <button
-              key={slide.label ?? slide.src}
+              key={i}
               type="button"
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => setIndex(i)}

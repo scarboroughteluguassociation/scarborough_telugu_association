@@ -24,15 +24,15 @@ export default async function Home() {
           width={241}
           height={1033}
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-0 h-auto w-16 select-none sm:w-20 md:w-24 lg:w-28"
+          className="pointer-events-none absolute bottom-0 left-0 hidden h-auto w-20 select-none sm:block md:w-24 lg:w-28"
         />
         <Image
-          src="/assets/lotus1-cutout.png"
+          src="/assets/bg-right-transparent.png"
           alt=""
-          width={467}
-          height={1915}
+          width={752}
+          height={1344}
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 h-auto w-16 select-none sm:w-20 md:w-24 lg:w-28"
+          className="pointer-events-none absolute top-0 right-0 hidden h-auto w-24 select-none sm:block md:w-28 lg:w-32"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
           <HeroCarousel />

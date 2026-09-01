@@ -110,3 +110,12 @@ export async function deleteEvent(eventId: string) {
   revalidatePath("/admin");
   revalidatePath("/events");
 }
+
+export async function deleteMember(memberId: string) {
+  const supabase = await createClient();
+
+  const { error } = await supabase.from("members").delete().eq("id", memberId);
+  if (error) throw new Error(error.message);
+
+  revalidatePath("/admin/members");
+}

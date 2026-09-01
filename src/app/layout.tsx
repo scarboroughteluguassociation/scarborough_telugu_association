@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3, IBM_Plex_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Source_Sans_3, IBM_Plex_Mono, Playfair_Display } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import "./globals.css";
@@ -22,6 +22,12 @@ const plexMono = IBM_Plex_Mono({
   weight: ["500", "600"],
 });
 
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Scarborough Telugu Association",
   description:
@@ -31,11 +37,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${sourceSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${sourceSans.variable} ${plexMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <Nav />
