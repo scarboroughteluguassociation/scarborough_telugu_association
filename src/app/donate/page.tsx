@@ -16,8 +16,8 @@ export default function DonatePage() {
       <h1 className="font-display text-3xl font-semibold">Support Our Community</h1>
       <p className="mx-auto mt-4 max-w-lg text-ink-soft">
         Your donation helps us host festivals, cultural programs and
-        community events throughout the year. Send an Interac e-Transfer
-        {hasQr ? " — scan the code below, or send directly to the email shown." : " to the email below."}
+        community events throughout the year.
+        {/* {hasQr ? " — scan the code below, or send directly to the email shown." : " to the email below."} */}
       </p>
 
       {hasQr && (
@@ -37,10 +37,15 @@ export default function DonatePage() {
 
       <div className="mt-8">
         {ETRANSFER_EMAIL ? (
-          <p className="text-sm">
-            Or send an e-Transfer directly to{" "}
-            <span className="font-semibold text-saffron">{ETRANSFER_EMAIL}</span>
-          </p>
+          <>
+            <p className="text-sm text-ink-soft">
+              For donations, please interac to this email:
+            </p>
+            <p className="mt-1 text-sm">
+            
+              <span className="font-semibold text-saffron">{ETRANSFER_EMAIL}</span>
+            </p>
+          </>
         ) : (
           <p className="text-sm text-gold">
             Set NEXT_PUBLIC_ETRANSFER_EMAIL to the association&apos;s
