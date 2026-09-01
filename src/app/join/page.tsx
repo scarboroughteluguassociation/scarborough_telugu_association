@@ -33,6 +33,8 @@ export default async function JoinPage({
             type="text"
             name="full_name"
             required
+            minLength={2}
+            maxLength={100}
             className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
@@ -42,6 +44,7 @@ export default async function JoinPage({
             type="email"
             name="email"
             required
+            maxLength={200}
             className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
@@ -50,6 +53,7 @@ export default async function JoinPage({
           <input
             type="tel"
             name="phone"
+            maxLength={30}
             className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
@@ -58,6 +62,7 @@ export default async function JoinPage({
           <textarea
             name="message"
             rows={3}
+            maxLength={2000}
             className="mt-1 w-full rounded-md border border-line bg-paper-raised px-3 py-2 text-sm outline-none focus:border-blue"
           />
         </label>
