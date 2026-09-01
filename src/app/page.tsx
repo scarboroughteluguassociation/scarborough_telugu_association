@@ -32,7 +32,7 @@ export default async function Home() {
           width={752}
           height={1344}
           aria-hidden="true"
-          className="pointer-events-none absolute top-0 right-0 hidden h-auto w-24 select-none sm:block md:w-28 lg:w-32"
+          className="pointer-events-none absolute top-2 right-0 hidden h-auto w-24 select-none md:block lg:w-28 xl:w-32"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-11.75 sm:px-10 sm:py-13.75">
           <HeroCarousel />
