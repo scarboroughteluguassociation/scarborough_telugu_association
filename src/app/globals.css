@@ -15,6 +15,8 @@
   --blue-soft: #dee7f3;
   --green: #1e7a4c;
   --green-soft: #dceee1;
+  --maroon: #7a1f2b;
+  --maroon-soft: #f3dde0;
 }
 
 @theme inline {
@@ -31,6 +33,8 @@
   --color-blue-soft: var(--blue-soft);
   --color-green: var(--green);
   --color-green-soft: var(--green-soft);
+  --color-maroon: var(--maroon);
+  --color-maroon-soft: var(--maroon-soft);
   --font-display: var(--font-fraunces);
   --font-playfair: var(--font-playfair-display);
   --font-sans: var(--font-source-sans);

@@ -60,7 +60,7 @@ export default function DonatePage() {
             href={DONATION_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-block rounded-full bg-saffron px-6 py-3 text-sm font-semibold text-paper-raised hover:opacity-90"
+            className="inline-block rounded-full bg-maroon px-6 py-3 text-sm font-semibold text-paper-raised hover:opacity-90"
           >
             Donate Online
           </a>
