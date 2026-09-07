@@ -7,9 +7,9 @@ const DONATION_LINK = process.env.NEXT_PUBLIC_DONATION_LINK;
 
 export default function DonatePage() {
   // Drop the association's Interac QR (e.g. from their bank's "Business
-  // Request Money" feature) at public/donate-qr.png and this section
+  // Request Money" feature) at public/assets/qr.jpeg and this section
   // appears automatically — no code change needed.
-  const hasQr = fs.existsSync(path.join(process.cwd(), "public", "donate-qr.png"));
+  const hasQr = fs.existsSync(path.join(process.cwd(), "public", "assets", "qr.jpeg"));
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 text-center">
@@ -23,7 +23,7 @@ export default function DonatePage() {
       {hasQr && (
         <div className="mx-auto mt-10 w-fit rounded-xl border border-line bg-paper-raised p-8">
           <Image
-            src="/donate-qr.png"
+            src="/assets/qr.jpeg"
             alt="Scan to send an Interac e-Transfer"
             width={220}
             height={220}
@@ -62,7 +62,7 @@ export default function DonatePage() {
             rel="noreferrer"
             className="inline-block rounded-full bg-saffron px-6 py-3 text-sm font-semibold text-paper-raised hover:opacity-90"
           >
-            Donate by Card
+            Donate Online
           </a>
         </div>
       )}
@@ -71,7 +71,7 @@ export default function DonatePage() {
         Interac e-Transfer donations go directly to the association&apos;s
         bank account with no card-processing fees.
         {DONATION_LINK &&
-          " Card donations are also accepted and processed securely by Stripe."}
+          " Online donations are also accepted and processed securely by Zeffy."}
       </p>
     </div>
   );
